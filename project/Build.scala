@@ -7,7 +7,7 @@ object BobBotBuild extends Build {
 
   object V {
 
-    val slime = "0.0.1-SNAPSHOT"
+    val slime = "0.0.2-SNAPSHOT"
 
   }
 
