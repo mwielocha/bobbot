@@ -7,12 +7,12 @@ object BobBotBuild extends Build {
 
   object V {
 
-    val slime = "0.0.2-SNAPSHOT"
+    val slime = "0.1.1-SNAPSHOT"
 
   }
 
   val projectName         = "bobbot"
-  val projectVersion      = "0.0.1-SNAPSHOT"
+  val projectVersion      = "1.0.0-SNAPSHOT"
 
   val projectDependencies = Seq(
     "com.cyberdolphins" %% "slime" % V.slime withSources()

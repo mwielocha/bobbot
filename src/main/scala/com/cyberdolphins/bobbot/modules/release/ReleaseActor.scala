@@ -14,7 +14,7 @@ class ReleaseActor extends Actor with ActorLogging {
   def isAfter5pm = DateTime.now().hourOfDay().get > 17
 
   override def receive: Receive = {
-    case Message(text, channel, user)
+    case SimpleInboundMessage(text, channel, user)
       if (text.toLowerCase.startsWith("releasing") ||
         text.toLowerCase.startsWith("swarming")) && isAfter5pm  =>
 

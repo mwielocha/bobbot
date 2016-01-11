@@ -2,8 +2,8 @@ package com.cyberdolphins.bobbot.modules.cah
 
 import akka.actor.{ActorLogging, Actor}
 import akka.actor.Actor.Receive
-import com.cyberdolphins.slime.incoming.Message
-import com.cyberdolphins.slime.outgoing.SimpleOutboundMessage
+import com.cyberdolphins.slime.incoming._
+import com.cyberdolphins.slime.outgoing._
 import play.api.libs.json.Json
 
 import scala.annotation.tailrec
@@ -45,7 +45,7 @@ class CardsActor extends Actor with ActorLogging {
 
   override def receive: Actor.Receive = {
 
-    case Message("cardsagainsthumanity", channel, user) =>
+    case SimpleInboundMessage("cardsagainsthumanity", channel, user) =>
 
       Random.shuffle(blacks).head match {
         case Card(_, _, text, size) =>

@@ -27,6 +27,6 @@ class BobBotActor extends SlackBotActor {
   }
 
   override def eventReceive: EventReceive = {
-    case m: Message => actors.foreach(_ ! m)
+    case m: SimpleInboundMessage => actors.foreach(_ ! m)
   }
 }
