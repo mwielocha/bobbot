@@ -2,6 +2,7 @@ package com.cyberdolphins.bobbot
 
 import akka.actor.Props
 import com.cyberdolphins.bobbot.modules.cah.{CardsActor, Card}
+import com.cyberdolphins.bobbot.modules.release.ReleaseActor
 import com.cyberdolphins.slime.SlackBotActor
 import com.cyberdolphins.slime.incoming._
 import com.cyberdolphins.slime.outgoing._
@@ -17,7 +18,8 @@ import scala.util.{Failure, Success, Try, Random}
 class BobBotActor extends SlackBotActor {
 
   val modules: Seq[Class[_]] = Seq(
-    classOf[CardsActor]
+    classOf[CardsActor],
+    classOf[ReleaseActor]
   )
 
   val actors = modules.map { m =>
