@@ -18,6 +18,6 @@ class ReleaseActor extends Actor with ActorLogging {
       if (text.toLowerCase.startsWith("releasing") ||
         text.toLowerCase.startsWith("swarming")) && isAfter5pm  =>
 
-        sender ! SimpleOutboundMessage("Wow there cowboy, releasing after *5 pm*, are you mad bro?")
+        sender ! SimpleOutboundMessage("Wow there cowboy, releasing after *5 pm*, are you mad bro?", channel, user)
   }
 }
