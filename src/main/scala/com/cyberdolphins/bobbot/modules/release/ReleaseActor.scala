@@ -11,7 +11,7 @@ import org.joda.time.DateTime
   */
 class ReleaseActor extends Actor with ActorLogging {
 
-  def isAfter5pm = DateTime.now().hourOfDay().get > 17
+  def isAfter5pm = DateTime.now().hourOfDay().get >= 17
 
   override def receive: Receive = {
     case SimpleInboundMessage(text, channel, user)
