@@ -2,6 +2,7 @@ package com.cyberdolphins.bobbot
 
 import akka.actor.Props
 import com.cyberdolphins.bobbot.modules.cah.{CardsActor, Card}
+import com.cyberdolphins.bobbot.modules.dah.DAHActor
 import com.cyberdolphins.bobbot.modules.meme.MemeActor
 import com.cyberdolphins.bobbot.modules.release.ReleaseActor
 import com.cyberdolphins.slime.SlackBotActor
@@ -21,7 +22,8 @@ class BobBotActor extends SlackBotActor {
   val modules: Seq[Class[_]] = Seq(
     classOf[CardsActor],
     classOf[ReleaseActor],
-    classOf[MemeActor]
+    classOf[MemeActor],
+    classOf[DAHActor]
   )
 
   val actors = modules.map { m =>
